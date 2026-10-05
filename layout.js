@@ -2,11 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const layoutRoot = document.getElementById("layout");
 
-  /*
-   * ============================================================
-   * PAGE CONFIGURATION
-   * ============================================================
-   */
+
 
   const pages = {
     about: "about.html",
@@ -15,11 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
 
-  /*
-   * ============================================================
-   * LOAD PAGE
-   * ============================================================
-   */
 
   async function loadPage(page, updateURL = true) {
 
@@ -51,15 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         "text/html"
       );
 
-      /*
-       * Find the main article in the requested page.
-       *
-       * This only requires:
-       *
-       * <article class="main">
-       *
-       * No special data attribute is necessary.
-       */
+
 
       const pageMain =
         pageDocument.querySelector("article.main");
@@ -71,9 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
 
-      /*
-       * Find the main article in the current layout.
-       */
+
 
       const main =
         document.querySelector(".aesthetique article.main");
@@ -85,9 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
 
-      /*
-       * Replace the contents of the current main article.
-       */
+
 
       main.innerHTML = pageMain.innerHTML;
 
@@ -104,9 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
 
-      /*
-       * Update the active sidebar link.
-       */
+
 
       document
         .querySelectorAll(".sidebar-nav a")
@@ -120,9 +97,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
 
-      /*
-       * Change the URL without reloading the entire site.
-       */
+
 
       if (updateURL) {
 
@@ -157,11 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 
-  /*
-   * ============================================================
-   * COMPLETE SITE LAYOUT
-   * ============================================================
-   */
+/* layout */
 
   layoutRoot.innerHTML = `
 
@@ -314,11 +285,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   `;
 
 
-  /*
-   * ============================================================
-   * SIDEBAR NAVIGATION
-   * ============================================================
-   */
+/* sidebar navi */
 
   document
     .querySelectorAll(".sidebar-nav a")
@@ -338,11 +305,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
 
-  /*
-   * ============================================================
-   * BROWSER BACK / FORWARD
-   * ============================================================
-   */
+/* back/forward */
 
   window.addEventListener("popstate", () => {
 
@@ -366,11 +329,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
 
-  /*
-   * ============================================================
-   * INITIAL PAGE
-   * ============================================================
-   */
+/* initial */
 
   const currentFile =
     window.location.pathname
